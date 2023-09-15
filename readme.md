@@ -28,5 +28,22 @@ URL do curso -> [Ruby I: Lógica de Programação com Jogos](https://cursos.alur
 * Concatenar *strings* com `+`.
 * Converter uma *string* para *integer* com `.to_i`.
 
+## 02 - Condicionais, Laços, Programação Imperativa
+* Estruturas condicionais com:
+```ruby
+if CONDIÇÃO
+    # código caso seja verdadeiro
+else
+    # código caso seja falso
+end
+```
+* Criar loop de repetição *for* com:
+```ruby
+for count in 1..3
+    ...
+end
+```
+* Transformar um número em uma *string* com `.to_s`.
+
 ## :black_nib: Licença
 [Unlicense](https://unlicense.org)

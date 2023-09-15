@@ -1,17 +1,31 @@
-puts "Welcome to the guessing game!" # O "puts" imprime algo no console
+puts "Welcome to the guessing game!"
+# puts ("Welcome to the guessing game!") # O uso do "()" é opcional
 
 puts "What's your name?"
-name = gets # O "gets" pega uma entrada do teclado
+name = gets
+puts "Welcome " + name
 
-puts "Welcome " + name # O "+" concatena duas strings
 
-
-puts "Choosing secret number between 0 at 200..."
+puts "\nChoosing secret number between 0 at 200..."
 secret_number = 150
 
-puts "Attemp 1"
-puts "Enter the number"
-kick = gets
 
-puts "The number is equal?"
-puts kick.to_i == secret_number # "to_i" para transformar o número para inteiro
+# Loop "for" no ruby, indica que vai do número "1" até "3"
+for count in 1..3
+    puts "\nAttemp " + count.to_s # Transforma um número em uma string
+    puts "Enter the number"
+    kick = gets
+
+    if kick.to_i == secret_number # Faz uma comparação
+        puts "You're right!"
+        break
+    else
+        if secret_number > kick.to_i
+            puts "The secret number is greater than your kick"
+        else
+            puts "The secret number is less than your kick"
+        end
+    end
+end
+
+# \
