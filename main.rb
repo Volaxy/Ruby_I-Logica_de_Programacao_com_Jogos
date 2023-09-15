@@ -6,10 +6,30 @@ def welcome
     puts "Welcome #{name}"
 end
 
-def draw_secret_number
-    puts "\nChoosing secret number between 0 at 200..."
+def set_difficulty
+    puts "What level of difficulty do you want to play on?"
+    puts "(1) - Easy | (2) - Medium | (3) - Little Hard | (4) - Hard | (5) - Impossible"
+    
+    gets.to_i
+end
 
-    rand(200) # O "rand" sorteia um número entre 0 e 1
+def draw_secret_number(difficulty)
+    case difficulty
+        when 1
+            max = 30
+        when 2
+            max = 50
+        when 3
+            max = 100
+        when 4
+            max = 150
+        else
+            max = 200
+    end
+
+    puts "\nChoosing secret number between 1 at #{max - 1}..."
+
+    rand(max)
 end
 
 def kick_a_number(attemp, kicks)
@@ -35,22 +55,36 @@ def is_correct_number(kick, secret_number)
     end
 end
 
+def play(difficulty)
+    secret_number = draw_secret_number(difficulty)
 
-welcome
+    kicks = []
+    points = 1000
 
-secret_number = draw_secret_number
-kicks = []
-points = 1000
+    for attemp in 1..5
+        kick = kick_a_number(attemp, kicks)
+        kicks << kick
 
-for attemp in 1..5
-    kick = kick_a_number(attemp, kicks)
-    kicks << kick
+        points -= (kick - secret_number).abs / 2.0
 
-    points -= (kick - secret_number).abs / 2.0 # O ".abs" retorna o número absoluto de um número
+        break if is_correct_number(kick, secret_number)
+    end
 
-    break if is_correct_number(kick, secret_number)
+    puts "\nYou won #{points} points!"
 end
 
-puts "You won #{points} points!"
+def want_to_play?
+    puts "Do you want to play again? (S/N)"
 
-# \
+    gets.strip.upcase != "S"
+end
+
+
+welcome
+difficulty = set_difficulty
+
+loop do
+    play(difficulty)
+
+    break if want_to_play?
+end

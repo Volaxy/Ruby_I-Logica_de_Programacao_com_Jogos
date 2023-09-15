@@ -83,5 +83,25 @@ unless 1 > 0 # Serve para verificar se a condição é falsa
 end
 ```
 
+## 06 - Case when, while, loop do
+* Usar a estrutura `case`:
+```ruby
+case VARIABLE
+    when 1
+        ...
+    when 2
+        ...
+    else
+        ...
+```
+* Usar o laço de repetição que executa sempre:
+```ruby
+loop do
+    ...
+
+    break if CONDITION
+end
+```
+
 ## :black_nib: Licença
 [Unlicense](https://unlicense.org)
