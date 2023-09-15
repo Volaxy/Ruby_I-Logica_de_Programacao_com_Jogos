@@ -74,5 +74,14 @@ end
 puts "Hello".+(" World!")
 ```
 
+## 05 - Operações Matemáticas, Sistemas Decimais e Hexadecimais
+* Retornar o número absoluto com `.abs`.
+* Criar o bloco de código "a não ser que":
+```ruby
+unless 1 > 0 # Serve para verificar se a condição é falsa
+    ...
+end
+```
+
 ## :black_nib: Licença
 [Unlicense](https://unlicense.org)

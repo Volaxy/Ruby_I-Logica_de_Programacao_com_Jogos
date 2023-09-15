@@ -3,19 +3,18 @@ def welcome
     
     puts "What's your name?"
     name = gets.strip
-    puts "Welcome #{name}" # O "#{}" permite o uso de variáveis dentro da string OBS.: A variável já executa o método "to_s" por padrão
+    puts "Welcome #{name}"
 end
 
 def draw_secret_number
     puts "\nChoosing secret number between 0 at 200..."
 
-    150
+    rand(200) # O "rand" sorteia um número entre 0 e 1
 end
 
 def kick_a_number(attemp, kicks)
     puts "\nAttemp #{attemp}"
     puts "Numbers already tried: #{kicks}"
-    # puts kicks.size # O ".size" serve para mostrar o número de elementos de um array
     
     puts "Enter the number"
     
@@ -41,12 +40,17 @@ welcome
 
 secret_number = draw_secret_number
 kicks = []
+points = 1000
 
 for attemp in 1..5
     kick = kick_a_number(attemp, kicks)
     kicks << kick
 
+    points -= (kick - secret_number).abs / 2.0 # O ".abs" retorna o número absoluto de um número
+
     break if is_correct_number(kick, secret_number)
 end
+
+puts "You won #{points} points!"
 
 # \
