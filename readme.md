@@ -55,5 +55,24 @@ if is_correct_number kick, secret_number # É o mesmo que "if is_correct_number(
 ...
 ```
 
+## 04 - Arrays, Métodos e Funções
+* Declarar *array* com `array = [1, 2, 3]`.
+* Percorrer um *array*:
+```ruby
+for kick in [1, 2, 3]
+    puts kick
+end
+```
+* Inserir valores na última posição com `array << 10`.
+* Descobrir o tamanho de um *array* com `.size`.
+* Tirar todos os **caracteres em branco** de uma *string* com `.strip`.
+* Realizar interpolação de *string* com `"A string with #{}!"`.
+* Quando chamamos uma função a partir de um valor (`"string".to_i`), ela é chamada de **método** e quando chamamos uma função `function_name(1)` ela é chamada de **função**.
+* O comando `irb` é um interpretador do **Ruby** que permite a execução de comandos diretamente no próprio console.
+* Os comandos de `+` e `<<` também são métodos de uma variável, que podem ser executados da seguinte maneira:
+```ruby
+puts "Hello".+(" World!")
+```
+
 ## :black_nib: Licença
 [Unlicense](https://unlicense.org)
