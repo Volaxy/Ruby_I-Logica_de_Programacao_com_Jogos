@@ -10,13 +10,8 @@ URL do curso -> [Ruby I: Lógica de Programação com Jogos](https://cursos.alur
 
 ## :computer: Linguagens Usadas
 <div>
-    <img alt='HTML Logo' height='60' width='50' src='https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/html-5.svg' />&nbsp;
-    <img alt='CSS Logo' height='60' width='50' src='https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/css-3.svg' />&nbsp;
     <img alt='Ruby Logo' height='60' width='50' src='https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/ruby.svg' />&nbsp;
 </div>
-
-## Links Úteis &#x1F517;
-* []() - 
 
 ***
 
@@ -31,7 +26,7 @@ URL do curso -> [Ruby I: Lógica de Programação com Jogos](https://cursos.alur
 ## 02 - Condicionais, Laços, Programação Imperativa
 * Estruturas condicionais com:
 ```ruby
-if CONDIÇÃO
+if CONDITION
     # código caso seja verdadeiro
 else
     # código caso seja falso
@@ -44,6 +39,21 @@ for count in 1..3
 end
 ```
 * Transformar um número em uma *string* com `.to_s`.
+
+## 03 - O Poder da Extração de Código
+* Definir **funções** com:
+```ruby
+def FUNCTION_NAME
+    ...
+end
+```
+* A última linha de uma função sempre é retornada.
+* Os `()` são opcionais na chamada de uma função:
+```ruby
+...
+if is_correct_number kick, secret_number # É o mesmo que "if is_correct_number(kick, secret_number)"
+...
+```
 
 ## :black_nib: Licença
 [Unlicense](https://unlicense.org)

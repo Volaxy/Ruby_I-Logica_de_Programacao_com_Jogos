@@ -1,31 +1,47 @@
-puts "Welcome to the guessing game!"
-# puts ("Welcome to the guessing game!") # O uso do "()" é opcional
+def welcome 
+    puts "Welcome to the guessing game!"
+    
+    puts "What's your name?"
+    name = gets
+    puts "Welcome " + name
+end
 
-puts "What's your name?"
-name = gets
-puts "Welcome " + name
+def draw_secret_number
+    puts "\nChoosing secret number between 0 at 200..."
 
+    150
+end
 
-puts "\nChoosing secret number between 0 at 200..."
-secret_number = 150
-
-
-# Loop "for" no ruby, indica que vai do número "1" até "3"
-for count in 1..3
-    puts "\nAttemp " + count.to_s # Transforma um número em uma string
+def kick_a_number(attemp)
+    puts "\nAttemp " + attemp.to_s
     puts "Enter the number"
-    kick = gets
+    
+    gets.to_i
+end
 
-    if kick.to_i == secret_number # Faz uma comparação
+def is_correct_number(kick, secret_number)
+    if kick == secret_number
         puts "You're right!"
-        break
-    else
-        if secret_number > kick.to_i
-            puts "The secret number is greater than your kick"
-        else
-            puts "The secret number is less than your kick"
-        end
+
+        return true
     end
+
+    if secret_number > kick
+        puts "The secret number is greater than your kick"
+    else
+        puts "The secret number is less than your kick"
+    end
+end
+
+
+welcome
+
+secret_number = draw_secret_number
+
+for attemp in 1..3
+    kick = kick_a_number attemp
+
+    break if is_correct_number kick, secret_number
 end
 
 # \
